@@ -7,3 +7,5 @@ if vim.g.neovide then
   vim.g.neovide_no_idle = true
   vim.g.neovide_fullscreen = false
 end
+
+vim.opt.hidden = false
