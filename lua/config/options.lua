@@ -9,3 +9,11 @@ if vim.g.neovide then
 end
 
 vim.opt.hidden = false
+-- Tabs & indentation
+vim.opt.expandtab = true -- use spaces instead of tabs
+vim.opt.shiftwidth = 4 -- indent size when using >>
+vim.opt.tabstop = 4 -- how many spaces a tab counts for
+vim.opt.softtabstop = 4 -- spaces inserted when pressing Tab
+vim.opt.smartindent = true -- smart auto-indenting
+vim.opt.autoindent = true -- copy indent from current line
+vim.opt.cindent = true -- better for C, C++, Java
