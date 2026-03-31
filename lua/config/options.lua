@@ -7,3 +7,16 @@ if vim.g.neovide then
   vim.g.neovide_no_idle = true
   vim.g.neovide_fullscreen = false
 end
+
+-- Enable filetype-based indentation
+vim.cmd("filetype plugin indent on")
+
+-- Indentation behavior
+vim.opt.autoindent = true
+vim.opt.smartindent = true
+vim.opt.cindent = false
+
+-- Java indentation settings
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+vim.opt.expandtab = true
