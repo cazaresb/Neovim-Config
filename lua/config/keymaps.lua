@@ -50,3 +50,21 @@ pcall(vim.keymap.del, "n", "<C-;>")
 vim.keymap.set("n", "<leader>tc", function()
   require("here-term").open()
 end, { desc = "Open terminal in cwd" })
+
+vim.keymap.set("n", "<leader>cP", function()
+  local start_pos = vim.api.nvim_buf_get_mark(0, "[")
+  local end_pos = vim.api.nvim_buf_get_mark(0, "]")
+
+  if start_pos[1] == 0 or end_pos[1] == 0 then
+    return
+  end
+
+  require("conform").format({
+    lsp_format = "fallback",
+    async = true,
+    range = {
+      start = { start_pos[1], start_pos[2] },
+      ["end"] = { end_pos[1], end_pos[2] },
+    },
+  })
+end, { desc = "Format Last Change/Paste" })
